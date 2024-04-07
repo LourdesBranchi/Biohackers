@@ -1,0 +1,105 @@
+/* Estilos base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Azul pastel */
+}
+
+/* Header */
+.header {
+    background-color: #add8e6; /* Azul claro */
+    color: #333;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+}
+
+.menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-items li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu-items li:last-child {
+    margin-right: 0;
+}
+
+.menu-items li a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Ajuste de posición y margen para el enlace "Reportar problema" */
+.menu-items li:nth-child(3) {
+    margin-right: 20px; /* Ajustamos el margen derecho */
+}
+
+.menu-items li:nth-child(3) a {
+    padding-right: 20px; /* Ajustamos el padding derecho */
+}
+
+/* Main */
+.main {
+    padding-top: 60px; /* Altura del header */
+}
+
+.contenido {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.titulo {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.resumen {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.boton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.resultado {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Footer */
+.footer {
+    background-color: #add8e6; /* Azul claro */
+    color: #333;
+    padding: 10px 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1000;
+}

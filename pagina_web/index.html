@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETECCIÓN DE TUMORES DE CÁNCER DE MAMA</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Detección de Tumores</div>
+        <nav class="menu">
+            <ul class="menu-items">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#historial">Historial</a></li>
+                <li><a href="#reportar-problema">Reportar problema</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="contenido">
+            <h1 class="titulo">Clasificador tumoral de cáncer de mama</h1>
+            <p class="resumen">Suba el archivo de la mamografía y ejecute el algoritmo.</p>
+
+            <!-- Formulario para cargar archivos con estilos del segundo botón y texto personalizado -->
+            <form id="form" method="POST" enctype="multipart/form-data">
+                <input id="file" type="file" name="file" required>
+                <!-- Utiliza el mismo estilo del botón y el texto personalizado -->
+                <button type="submit" class="boton">Ejecutar algoritmo</button>
+            </form>
+            <br><br>
+
+
+            <!-- Área para mostrar el resultado -->
+            <div id="resultado" class="resultado"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Biohackers S.R.L</p>
+    </footer>
+
+    <script>
+        function ejecutar() {
+            document.getElementById("resultado").innerHTML = "Resultado obtenido.";
+        }
+
+        function enviarArchivo(event) {
+            event.preventDefault();
+
+            const file = document.getElementById("file");
+
+            const formData = new FormData();
+
+            formData.append("file", file);
+
+            fetch("http://localhost:3000/upload", {
+                method: "post",
+                body: formData,
+            }).catch((error) => console.log(error))
+        }
+
+        const form = document.getElementById("form");
+
+        form.addEventListener("submit", enviarArchivo); 
+
+    </script>
+</body>
+</html>
